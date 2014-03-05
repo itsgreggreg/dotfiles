@@ -40,3 +40,6 @@ set nowritebackup
 
 " no swap file
 set noswapfile
+
+" Syntax highlighting
+syntax on
