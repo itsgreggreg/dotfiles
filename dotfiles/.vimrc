@@ -21,16 +21,15 @@ nmap <leader>l :set list!<CR>
 
 " Default show whitespace to on
 set list
- 
-" Use the same symbols as TextMate for tabstops and EOLs
+
+" Nicer white space characters
 set listchars=tab:▸\ ,eol:¬
 
 " Auto indent on enter press
 set autoindent
 
-" Tabs are spaces
+" Tabs are 2 spaces
 set expandtab
-
 set softtabstop=2
 set shiftwidth=2
 
@@ -43,3 +42,18 @@ set noswapfile
 
 " Syntax highlighting
 syntax on
+
+" Always show status bar
+set laststatus=2
+" Custom Status bar: Filename ColumnNum@RowNum/TotalRows DocPercent
+set statusline=%F%m%r%h%w\ %v@%l/%L\ %p%%
+
+" Remap jj to <esc> in insert mode.
+inoremap jj <Esc>
+
+" Highlight search results
+set hlsearch
+
+" Highlight trailing white space
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
