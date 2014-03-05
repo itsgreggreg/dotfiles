@@ -1,4 +1,4 @@
-**What**
+**What**  
 Symlink all the files in `~/.dotfiles/dotfiles` to `~/`
 
 **How**
@@ -7,7 +7,7 @@ Symlink all the files in `~/.dotfiles/dotfiles` to `~/`
  - `ruby ~/.dotfiles/script/link.rb`
  - anytime you add a new dotfile just run link again
 
-**Bonus**
-Make master your base set of dotfiles.
-Make branches computer specific.
+**Bonus**  
+Make master your base set of dotfiles.  
+Make branches computer specific.  
 Checkout the greggreg remote branch for my crappy dotfiles.
