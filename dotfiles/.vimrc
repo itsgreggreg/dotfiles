@@ -57,3 +57,10 @@ set hlsearch
 " Highlight trailing white space
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
+
+" Filetypes {
+
+  " Read Gemfile as ruby
+  au BufNewFile,Bufread Gemfile set ft=ruby
+
+" } Filetypes
