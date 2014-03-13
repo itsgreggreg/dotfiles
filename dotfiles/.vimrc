@@ -19,6 +19,8 @@
   " optional
   " To install start vim and run :BundleInstall
   Bundle 'groenewege/vim-less'
+  Bundle 'tomtom/tcomment_vim'
+  Bundle 'itsgreggreg/tabline.vim'
 
 " } vundle
 
@@ -37,20 +39,20 @@ set hidden
 nnoremap ' `
 nnoremap ` '
 
-" show leader key when pressed
+" show commands when pressed
 set showcmd
 let mapleader = ","
 
 " Shortcut to rapidly toggle `set list`
-nmap <leader>l :set list!<CR>
 
 " Default show whitespace to on
 set list
-
 " Nicer white space characters
+nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 
 " Auto indent on enter press
+
 set autoindent
 
 " Tabs are 2 spaces
@@ -89,3 +91,10 @@ match ExtraWhitespace /\s\+$/
   au BufNewFile,Bufread Gemfile set ft=ruby
   au BufNewFile,Bufread *.less set ft=less
 " } Filetypes
+
+" Move lines up and down with - and _
+noremap - ddkP
+noremap _ ddp
+
+" Uppercase whole words
+nnoremap <leader>u viwU
