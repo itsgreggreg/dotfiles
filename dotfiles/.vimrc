@@ -1,3 +1,28 @@
+" vundle{
+  " for setup see: https://github.com/gmarik/Vundle.vim
+  " required
+  set nocompatible              " be iMproved
+  filetype off
+
+  " set the runtime path to include Vundle and initialize
+  set rtp+=~/.vim/bundle/vundle/
+  call vundle#rc()
+  " alternatively, pass a path where Vundle should install bundles
+  "let path = '~/some/path/here'
+  "call vundle#rc(path)
+
+  " let Vundle manage Vundle
+  Bundle 'gmarik/vundle'
+
+  filetype plugin indent on
+
+  " optional
+  " To install start vim and run :BundleInstall
+  Bundle 'groenewege/vim-less'
+
+" } vundle
+
+
 " Start in insert mode when new file
 au BufNewFile * startinsert
 au VimEnter * if empty(expand("%")) | startinsert | endif
@@ -62,5 +87,5 @@ match ExtraWhitespace /\s\+$/
 
   " Read Gemfile as ruby
   au BufNewFile,Bufread Gemfile set ft=ruby
-
+  au BufNewFile,Bufread *.less set ft=less
 " } Filetypes
