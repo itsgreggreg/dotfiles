@@ -7,3 +7,7 @@
 [user]
 	name = greggreg
 	email = greggreg@gmail.com
+
+[alias]
+  sshow = "!f() { git stash show stash^{/$*} -p; }; f"
+  sapply = "!f() { git stash apply stash^{/$*}; }; f"
