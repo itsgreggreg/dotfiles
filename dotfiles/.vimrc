@@ -43,16 +43,12 @@ nnoremap ` '
 set showcmd
 let mapleader = ","
 
-" Shortcut to rapidly toggle `set list`
-
-" Default show whitespace to on
+" Show whitespace
 set list
 " Nicer white space characters
-nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 
 " Auto indent on enter press
-
 set autoindent
 
 " Tabs are 2 spaces
