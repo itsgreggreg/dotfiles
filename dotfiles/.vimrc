@@ -94,3 +94,10 @@ noremap _ ddp
 
 " Uppercase whole words
 nnoremap <leader>u viwU
+
+" Single bracket for indentation
+nnoremap > >>
+nnoremap < <<
+
+" Tabnew shortcut
+command -nargs=? T tabnew <args>
