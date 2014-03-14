@@ -21,6 +21,7 @@
   Bundle 'groenewege/vim-less'
   Bundle 'tomtom/tcomment_vim'
   Bundle 'itsgreggreg/tabline.vim'
+  Bundle 'kien/ctrlp.vim'
 
 " } vundle
 
@@ -82,8 +83,6 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
 " Filetypes {
-
-  " Read Gemfile as ruby
   au BufNewFile,Bufread Gemfile set ft=ruby
   au BufNewFile,Bufread *.less set ft=less
 " } Filetypes
@@ -100,4 +99,11 @@ nnoremap > >>
 nnoremap < <<
 
 " Tabnew shortcut
-command -nargs=? T tabnew <args>
+" TODO: tab completion
+command! -nargs=? T tabnew <args>
+
+" Auto reload changes to .vimrc
+augroup reload_vimrc " {
+  autocmd!
+  autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END " }
