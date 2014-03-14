@@ -22,9 +22,13 @@
   Bundle 'tomtom/tcomment_vim'
   Bundle 'itsgreggreg/tabline.vim'
   Bundle 'kien/ctrlp.vim'
+  Bundle 'flazz/vim-colorschemes'
 
 " } vundle
 
+" Look and feel{
+  colorscheme Monokai " requires flass/vim-colorschemes
+" } Look and Feel
 
 " Start in insert mode when new file
 au BufNewFile * startinsert
@@ -32,9 +36,6 @@ au VimEnter * if empty(expand("%")) | startinsert | endif
 
 " Show Line Numbers
 set number
-
-" allows vim to handle multiple buffers without writing to disk
-set hidden
 
 " switch single quote and back tick
 nnoremap ' `
@@ -107,3 +108,6 @@ augroup reload_vimrc " {
   autocmd!
   autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END " }
+
+" Remap # to begening of line
+nnoremap # ^
