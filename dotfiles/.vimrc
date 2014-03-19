@@ -19,10 +19,12 @@
   " optional
   " To install start vim and run :BundleInstall
   Bundle 'groenewege/vim-less'
+  Bundle 'tpope/vim-haml'
   Bundle 'tomtom/tcomment_vim'
   Bundle 'itsgreggreg/tabline.vim'
   Bundle 'kien/ctrlp.vim'
   Bundle 'flazz/vim-colorschemes'
+  Bundle 'rking/ag.vim'
 
 " } vundle
 
@@ -73,8 +75,11 @@ set laststatus=2
 " Custom Status bar: Filename ColumnNum@RowNum/TotalRows DocPercent
 set statusline=%F%m%r%h%w\ %v@%l/%L\ %p%%
 
-" Remap jj to <esc> in insert mode.
-inoremap jj <Esc>
+" Remap jk to <esc> in insert mode.
+inoremap jk <Esc>l
+
+" Remap jw to <esc>-save in insert mode
+inoremap jw <Esc>:w<enter>l
 
 " Highlight search results
 set hlsearch
@@ -102,6 +107,8 @@ nnoremap < <<
 " Tabnew shortcut
 " TODO: tab completion
 command! -nargs=? T tabnew <args>
+" Always show tabline
+set showtabline=2
 
 " Auto reload changes to .vimrc
 augroup reload_vimrc " {
@@ -111,3 +118,6 @@ augroup END " }
 
 " Remap # to begening of line
 nnoremap # ^
+
+" Quick edit vimrc
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
