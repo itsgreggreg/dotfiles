@@ -121,3 +121,6 @@ nnoremap # ^
 
 " Quick edit vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+
+" Split lines
+nnoremap <C-J> a<CR><Esc>k$
