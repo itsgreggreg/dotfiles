@@ -122,5 +122,11 @@ nnoremap # ^
 " Quick edit vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 
-" Split lines
-nnoremap <C-J> a<CR><Esc>k$
+" Split lines with Cntrl+j
+nnoremap <C-j> a<CR><Esc>k$
+
+" Double quote word with <leader>"
+nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+
+" Single quote word with <leader>'
+nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
