@@ -1,0 +1,36 @@
+directory: "/Volumes/Bonk/Music Library/"
+library: /Volumes/BONK/Beets/musiclibrary.blb
+import:
+  move: yes
+  timid: yes
+  log: /Volumes/BONK/Beets/log.txt
+paths:
+  default: $albumartist/$year - $album/$track $artist - $title
+  singleton: $artist/No Album/$artist - $title
+  comp: Compilations/$year - $album/$track $artist - $title
+
+replace:
+  '\.$': ''
+  '^\.': ''
+  ':': '.'
+
+plugins:
+  fromfilename
+  fetchart
+  embedart
+  scrub
+  ftintitle
+  missing
+  duplicates
+  fuzzy
+  web
+  convert
+
+# convert:
+#   auto: yes
+#   format: mp3
+#   max_bitrate: 320
+#   threads: 4
+
+# zero:
+#   fields: Description encoded\ by Copyright Now\ playing Comment

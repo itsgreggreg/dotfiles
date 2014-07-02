@@ -1,31 +1,26 @@
 " -- VUNDLE --
 " for setup see: https://github.com/gmarik/Vundle.vim
-" required
-set nocompatible              " be iMproved
+" required for vundle
+set nocompatible
 filetype off
-
-" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-" alternatively, pass a path where Vundle should install bundles
-"let path = '~/some/path/here'
-"call vundle#rc(path)
-
-" let Vundle manage Vundle
 Bundle 'gmarik/vundle'
-
 filetype plugin indent on
 
-" optional
+" optional bundles
 " To install start vim and run :BundleInstall
 Bundle 'groenewege/vim-less'
 Bundle 'tpope/vim-haml'
+Bundle 'digitaltoad/vim-jade'
+Bundle 'kchmck/vim-coffee-script'
+" Comment out lines/selections with <ctl>--
 Bundle 'tomtom/tcomment_vim'
 Bundle 'itsgreggreg/tabline.vim'
+" <ctl>p opens up a project file search, <ctrl>k/j navigate
 Bundle 'kien/ctrlp.vim'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'rking/ag.vim'
-Bundle 'digitaltoad/vim-jade'
 
 
 " -- LOOK AND FEEL --
@@ -64,7 +59,7 @@ set nowritebackup
 set noswapfile
 
 " Syntax highlighting
-syntax on
+syntax enable
 
 " Always show status bar
 set laststatus=2
@@ -77,6 +72,10 @@ set hlsearch
 " Highlight trailing white space
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
+
+" Code folding
+set foldmethod=indent
+set nofoldenable
 
 " -- MAPPINGS --
 " Remap jk to <esc> in insert mode.
@@ -115,6 +114,8 @@ nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
 nnoremap ' `
 nnoremap ` '
 
+" Doubleclick to toggle code fold
+map <2-LeftMouse> za
 
 " -- AUTO COMMANDS --
 " Start in insert mode when new file
@@ -131,6 +132,7 @@ augroup END " }
 au BufNewFile,Bufread Gemfile set ft=ruby
 au BufNewFile,Bufread *.less set ft=less
 au BufNewFile,Bufread *.jade set ft=jade
+au BufnewFile,Bufread *.coffee set ft=coffee
 
 
 " -- CUSTOM COMMANDS --
