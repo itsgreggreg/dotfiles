@@ -3,24 +3,27 @@
 " required for vundle
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
-filetype plugin indent on
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/vundle'
 
 " optional bundles
-" To install start vim and run :BundleInstall
-Bundle 'groenewege/vim-less'
-Bundle 'tpope/vim-haml'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'kchmck/vim-coffee-script'
+" To install start vim and run :PluginInstall
+Plugin 'groenewege/vim-less'
+Plugin 'tpope/vim-haml'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'kchmck/vim-coffee-script'
 " Comment out lines/selections with <ctl>--
-Bundle 'tomtom/tcomment_vim'
-Bundle 'itsgreggreg/tabline.vim'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'itsgreggreg/tabline.vim'
 " <ctl>p opens up a project file search, <ctrl>k/j navigate
-Bundle 'kien/ctrlp.vim'
-Bundle 'flazz/vim-colorschemes'
-Bundle 'rking/ag.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'rking/ag.vim'
+
+" All Plugins must be added before the following
+call vundle#end()
+filetype plugin indent on
 
 
 " -- LOOK AND FEEL --
