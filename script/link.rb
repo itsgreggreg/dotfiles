@@ -12,7 +12,8 @@ dotfiles.each do |dotfile|
       File.expand_path("~/.dotfiles/dotfiles/#{dotfile}"),
       File.expand_path("~/#{dotfile}")
     )
+    puts "Linked #{dotfile}"
   rescue
-    puts "Cannot link dotfile #{dotfile}"
+    puts "Did not link dotfile #{dotfile}"
   end
 end
