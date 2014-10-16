@@ -20,6 +20,7 @@ Plugin 'itsgreggreg/tabline.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'rking/ag.vim'
+Plugin 'editorconfig/editorconfig-vim'
 
 " All Plugins must be added before the following
 call vundle#end()
@@ -118,7 +119,7 @@ nnoremap ' `
 nnoremap ` '
 
 " Doubleclick to toggle code fold
-map <2-LeftMouse> za
+" map <2-LeftMouse> za
 
 " -- AUTO COMMANDS --
 " Start in insert mode when new file
