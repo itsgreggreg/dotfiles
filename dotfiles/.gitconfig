@@ -2,6 +2,7 @@
 [core]
   ; Don't trust file modes
   filemode = false
+	editor = /usr/bin/vim
 
 
 [user]
