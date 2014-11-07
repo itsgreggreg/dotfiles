@@ -12,6 +12,15 @@
 [alias]
   sshow = "!f() { git stash show stash^{/$*} -p; }; f"
   sapply = "!f() { git stash apply stash^{/$*}; }; f"
+  s = "status"
+  co = "checkout"
+  corb = "checkout --track"
+  cm = "commit"
+  aa = "add ."
+  bn = "checkout -b"
+  bd = "branch -d"
+  l = "log --oneline"
+  ll = "log --oneline --decorate --graph --all"
 
 [color]
   ui = auto
