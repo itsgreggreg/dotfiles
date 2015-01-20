@@ -1,9 +1,11 @@
+# Notes
+# git checkout --conflict=diff3 *file* will checkout the conflicted file with all 3 relevant versions
+
 # core variables
 [core]
   ; Don't trust file modes
   filemode = false
 	editor = /usr/bin/vim
-
 
 [user]
   name = greggreg
@@ -13,14 +15,23 @@
   sshow = "!f() { git stash show stash^{/$*} -p; }; f"
   sapply = "!f() { git stash apply stash^{/$*}; }; f"
   s = "status"
+  d = "diff"
+  dc = "diff --cached"
   co = "checkout"
   corb = "checkout --track"
-  cm = "commit"
+  cm = "commit -m"
+  cma = "commit --amend"
   aa = "add ."
   bn = "checkout -b"
   bd = "branch -d"
   l = "log --oneline"
   ll = "log --oneline --decorate --graph --all"
+  theirs = "checkout --theirs"
+  ours = "checkout --ours"
+  rhh = "reset --hard HEAD"
 
 [color]
   ui = auto
+
+[merge]
+	conflictstyle = diff3
