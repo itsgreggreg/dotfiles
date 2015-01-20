@@ -8,6 +8,8 @@ paths:
   default: $albumartist/$year - $album/$track $artist - $title
   singleton: $artist/No Album/$artist - $title
   comp: Compilations/$year - $album/$track $artist - $title
+play:
+  command: /Applications/VLC.app/Contents/MacOS/VLC
 
 replace:
   '\.$': ''
@@ -25,6 +27,7 @@ plugins:
   fuzzy
   web
   convert
+  play
 
 # convert:
 #   auto: yes
