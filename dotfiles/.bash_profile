@@ -6,6 +6,10 @@ export PATH=~/.dotfiles/pathfiles:$PATH
 
 # rbenv
 export PATH=~/.rbenv/shims:$PATH
+#To use Homebrew's directories rather than ~/.rbenv add to your profile:
+export RBENV_ROOT=/usr/local/var/rbenv
+#To enable shims and autocompletion add to your profile:
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Beets with config in home
 alias beet='beet -c ~/.beets_config.yaml'
