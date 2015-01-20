@@ -18,8 +18,6 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'itsgreggreg/tabline.vim'
 " <ctl>p opens up a project file search, <ctrl>k/j navigate
 Plugin 'kien/ctrlp.vim'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'vim-scripts/CycleColor'
 Plugin 'rking/ag.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'elixir-lang/vim-elixir'
@@ -30,7 +28,7 @@ filetype plugin indent on
 
 
 " -- LOOK AND FEEL --
-colorscheme panacea " requires flass/vim-colorschemes
+colorscheme panacea " requires itsgreggreg/varnish
 " Monokai, up, wombat, desert. vanzan_color, vilight, void
 
 " -- REMAP MOVEMENT FOR DVORAK --
