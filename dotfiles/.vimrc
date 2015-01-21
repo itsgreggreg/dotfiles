@@ -34,10 +34,15 @@ colorscheme panacea " requires itsgreggreg/varnish
 " Monokai, up, wombat, desert. vanzan_color, vilight, void
 
 " -- REMAP MOVEMENT FOR DVORAK --
-map t j
-map n k
-map s l
+noremap t j
+noremap n k
+noremap s l
 noremap m n
+" -- REMAP SCREEN MOVEMENT FOR DVORAK --
+nnoremap <C-S> <C-W>l
+nnoremap <C-T> <C-W>j
+nnoremap <C-N> <C-W>k
+nnoremap <C-H> <C-W>h
 " -- SCREEN MOVEMENT OVER NORMAL MOVEMENT --
 nnoremap T 5j
 nnoremap N 5k
@@ -137,9 +142,10 @@ au BufNewFile,Bufread *.jade set ft=jade
 au BufNewFile,Bufread *.coffee set ft=coffee
 au BufNewFile,Bufread *.ex set ft=elixir
 
-" -- FILE IGNORES --
+" -- NERDtree --
 let NERDTreeIgnore=[ '\.beam$', '^\.git$' ]
-
+let NERDTreeMapOpenInTab= 'b'
+let NERDTreeMapActivateNode= '<Space>'
 " -- CUSTOM COMMANDS --
 " Tabnew shortcut
 " TODO: tab completion

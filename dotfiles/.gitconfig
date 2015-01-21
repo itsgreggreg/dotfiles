@@ -29,6 +29,7 @@
   theirs = "checkout --theirs"
   ours = "checkout --ours"
   rhh = "reset --hard HEAD"
+  pom = "push origin master"
 
 [color]
   ui = auto
