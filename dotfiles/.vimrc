@@ -16,11 +16,13 @@ Plugin 'kchmck/vim-coffee-script'
 " Comment out lines/selections with <ctl>--
 Plugin 'tomtom/tcomment_vim'
 Plugin 'itsgreggreg/tabline.vim'
+" Plugin 'itsgreggreg/varnish'
 " <ctl>p opens up a project file search, <ctrl>k/j navigate
 Plugin 'kien/ctrlp.vim'
 Plugin 'rking/ag.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'scrooloose/nerdtree'
 
 " All Plugins must be added before the following
 call vundle#end()
@@ -43,47 +45,48 @@ map S $
 map H ^
 
 " -- SETTINGS --
-" Show Line Numbers
-set number
-" show commands when pressed
-set showcmd
-" Show whitespace
-set list
-" Nicer white space characters
-set listchars=tab:▸\ ,eol:¬
-" Auto indent on enter press
-set autoindent
-" Tabs are 2 spaces
-set expandtab
+set number         " Show Line Numbers
+set showcmd        " Show commands when pressed
+set list           " Show whitespace
+set autoindent     " Auto indent on enter press
+set expandtab      " Tabs are 2 spaces
 set softtabstop=2
 set shiftwidth=2
-" Always show tabline
-set showtabline=2
-" don't generate backup files
-set nobackup
+set showtabline=2  " Always show tabline
+set nobackup       " Don't generate backup files
 set nowritebackup
-" no swap file
-set noswapfile
-" Syntax highlighting
-syntax enable
-" Always show status bar
-set laststatus=2
-" Custom Status bar: Filename ColumnNum@RowNum/TotalRows DocPercent
-set statusline=%F%m%r%h%w\ %v@%l/%L\ %p%%
-" Highlight search results
-set hlsearch
+set noswapfile     " No swap file
+syntax enable      " Syntax highlighting
+set laststatus=2   " Always show status bar
+set hlsearch       " Highlight search results
+set incsearch      " Show search matches as you type
+set smartcase      " Case insensitiv search
+set mouse=a        " Enable mouse
+set visualbell     " No beep
+set noerrorbells   " Don't beep
+set listchars=tab:▸\ ,eol:¬   " Nicer white space characters
+set history=1000     " Longer history
+set undolevels=1000  " More undo levels
+if v:version >= 730
+  set undofile       " Store undos between runs
+  set undodir=~/.vim/.undo,~/tmp,/tmp
+endif
 " Highlight trailing white space
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
+" Custom Status bar: Filename ColumnNum@RowNum/TotalRows DocPercent
+set statusline=%F%m%r%h%w\ %v@%l/%L\ %p%%
 " Code folding
-set foldmethod=indent
-set nofoldenable
+" set foldmethod=indent
+" set nofoldenable
 
 " -- MAPPINGS --
-" Remap jk to <esc> in insert mode.
-inoremap jk <Esc>l
-" Remap jw to <esc>-save in insert mode
-inoremap jw <Esc>:w<enter>l
+" Many less shift presses
+nnoremap ; :
+" Remap tn to <esc> in insert mode.
+inoremap tn <Esc>l
+" Remap hs to <esc>-save in insert mode
+inoremap hs <Esc>:w<enter>l
 " Move lines up and down with - and _
 noremap - ddkP
 noremap _ ddp
@@ -96,6 +99,9 @@ nnoremap # ^
 nnoremap <C-j> a<CR><Esc>k$
 " Save file with zz
 nnoremap zz :w<CR>
+" Easier shortcut for matching brackets
+nnoremap <tab> %
+vnoremap <tab> %
 
 "-- LEADER MAPPINGS --
 let mapleader = "'"
@@ -107,6 +113,8 @@ nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
 " Clear the screen with <leader>c
 nnoremap <leader>c :nohl<CR>
+" Set working dir to current file's dir with <leader>d
+nnoremap <leader>d :lcd %:p:h<CR>
 
 " Doubleclick to toggle code fold
 " map <2-LeftMouse> za
@@ -129,6 +137,8 @@ au BufNewFile,Bufread *.jade set ft=jade
 au BufNewFile,Bufread *.coffee set ft=coffee
 au BufNewFile,Bufread *.ex set ft=elixir
 
+" -- FILE IGNORES --
+let NERDTreeIgnore=[ '\.beam$', '^\.git$' ]
 
 " -- CUSTOM COMMANDS --
 " Tabnew shortcut
@@ -137,3 +147,10 @@ command! -nargs=? T tabnew <args>
 
 " Edit Vimrc
 command! Vrc tabnew ~/.vimrc
+
+" -- MISC --
+" highlight conflict markers
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+" shortcut to jump to next conflict marker
+nmap <silent> <leader>m /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR>
+
