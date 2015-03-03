@@ -1,5 +1,6 @@
 # Notes
-# git checkout --conflict=diff3 *file* will checkout the conflicted file with all 3 relevant versions
+# git checkout --conflict=diff3 *file* -> will checkout the conflicted file with all 3 relevant versions
+# git reset --hard new-tip-commit  -> to move a branch
 
 # core variables
 [core]
@@ -14,22 +15,32 @@
 [alias]
   sshow = "!f() { git stash show stash^{/$*} -p; }; f"
   sapply = "!f() { git stash apply stash^{/$*}; }; f"
-  s = "status"
-  d = "diff"
-  dc = "diff --cached"
-  co = "checkout"
-  corb = "checkout --track"
-  cm = "commit -m"
-  cma = "commit --amend"
+  # INFO
+  s  = "status"
+  sl = "shortlog"
+  l  = "log --oneline"
+  ll = "log --oneline --decorate --graph --all"
+  # COMITTING
+  corb = "checkout --track" # checkout and track remote branch
+  cm   = "commit -m"
+  cma  = "commit --amend"
+  # ADDING
   aa = "add ."
+  ac = "add -u" # Only add changes, not untracked files
+  # CHECKOUT / BRANCHING
+  co = "checkout"
   bn = "checkout -b"
   bd = "branch -d"
-  l = "log --oneline"
-  ll = "log --oneline --decorate --graph --all"
+  # DIFFING
   theirs = "checkout --theirs"
-  ours = "checkout --ours"
+  ours   = "checkout --ours"
+  d      = "diff"
+  dc     = "diff --cached"
+  d3     = "checkout --conflict=diff3"
+  # MISC
   rhh = "reset --hard HEAD"
   pom = "push origin master"
+  ltbc = "commit -m \"Let there be code\""
 
 [color]
   ui = auto

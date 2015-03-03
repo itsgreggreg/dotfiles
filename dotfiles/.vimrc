@@ -1,4 +1,3 @@
-" -- VUNDLE --
 " for setup see: https://github.com/gmarik/Vundle.vim
 " required for vundle
 set nocompatible
@@ -16,13 +15,14 @@ Plugin 'kchmck/vim-coffee-script'
 " Comment out lines/selections with <ctl>--
 Plugin 'tomtom/tcomment_vim'
 Plugin 'itsgreggreg/tabline.vim'
-" Plugin 'itsgreggreg/varnish'
+Plugin 'itsgreggreg/varnish'
 " <ctl>p opens up a project file search, <ctrl>k/j navigate
 Plugin 'kien/ctrlp.vim'
 Plugin 'rking/ag.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-surround'
 
 " All Plugins must be added before the following
 call vundle#end()
@@ -32,6 +32,9 @@ filetype plugin indent on
 " -- LOOK AND FEEL --
 colorscheme panacea " requires itsgreggreg/varnish
 " Monokai, up, wombat, desert. vanzan_color, vilight, void
+
+" -- GVIM --
+set guifont=Menlo\ Regular:h17
 
 " -- REMAP MOVEMENT FOR DVORAK --
 noremap t j
@@ -51,6 +54,7 @@ map H ^
 
 " -- SETTINGS --
 set number         " Show Line Numbers
+set colorcolumn=81 " Show the 81st column
 set showcmd        " Show commands when pressed
 set list           " Show whitespace
 set autoindent     " Auto indent on enter press
@@ -86,12 +90,15 @@ set statusline=%F%m%r%h%w\ %v@%l/%L\ %p%%
 " set nofoldenable
 
 " -- MAPPINGS --
+" r for redo
+nnoremap r <C-R>
+nnoremap <C-R> <Nop>
 " Many less shift presses
 nnoremap ; :
 " Remap tn to <esc> in insert mode.
 inoremap tn <Esc>l
-" Remap hs to <esc>-save in insert mode
-inoremap hs <Esc>:w<enter>l
+" " Remap hs to <esc>-save in insert mode
+" inoremap hs <Esc>:w<enter>l
 " Move lines up and down with - and _
 noremap - ddkP
 noremap _ ddp
@@ -111,14 +118,16 @@ vnoremap <tab> %
 "-- LEADER MAPPINGS --
 let mapleader = "'"
 " Uppercase whole words
-nnoremap <leader>u viwU
-" Double quote word with <leader>"
+nnoremap <leader>U viwUw
+" Lowercase whole words
+nnoremap <leader>u viwuw
+" Double quote words
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
-" Single quote word with <leader>'
+" Single quote words
 nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
-" Clear the screen with <leader>c
+" Clear the screen
 nnoremap <leader>c :nohl<CR>
-" Set working dir to current file's dir with <leader>d
+" Set working dir to current file's dir
 nnoremap <leader>d :lcd %:p:h<CR>
 
 " Doubleclick to toggle code fold

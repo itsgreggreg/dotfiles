@@ -1,15 +1,16 @@
-directory: "/Volumes/Bonk/Music Library/"
-library: /Volumes/BONK/Beets/musiclibrary.blb
+directory: "~/Music/Music Library/"
+library: "~/Music/Beets/musiclibrary.blb"
 import:
   move: yes
   timid: yes
-  log: /Volumes/BONK/Beets/log.txt
+  log: "~/Music/Beets/log.txt"
 paths:
   default: $albumartist/$year - $album/$track $artist - $title
   singleton: $artist/No Album/$artist - $title
   comp: Compilations/$year - $album/$track $artist - $title
 play:
   command: /Applications/VLC.app/Contents/MacOS/VLC
+clutter: "no"
 
 replace:
   '\.$': ''
