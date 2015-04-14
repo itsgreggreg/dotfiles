@@ -14,6 +14,11 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # Beets with config in home
 alias beet='beet -c ~/.beets_config.yaml'
 
+# open shortcut
+alias o='open'
+alias o.='open .'
+alias o..='open ..'
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 

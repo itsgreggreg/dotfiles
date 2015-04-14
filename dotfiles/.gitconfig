@@ -6,7 +6,7 @@
 [core]
   ; Don't trust file modes
   filemode = false
-	editor = /usr/bin/vim
+  editor = /usr/bin/vim
 
 [user]
   name = greggreg
@@ -21,7 +21,7 @@
   l  = "log --oneline"
   ll = "log --oneline --decorate --graph --all"
   # COMITTING
-  corb = "checkout --track" # checkout and track remote branch
+  corb = "checkout --track -b" # checkout and track remote branch
   cm   = "commit -m"
   cma  = "commit --amend"
   # ADDING
@@ -41,9 +41,10 @@
   rhh = "reset --hard HEAD"
   pom = "push origin master"
   ltbc = "commit -m \"Let there be code\""
+  stash = "stash -u"
 
 [color]
   ui = auto
 
 [merge]
-	conflictstyle = diff3
+  conflictstyle = diff3

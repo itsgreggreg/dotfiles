@@ -23,6 +23,7 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
+Plugin 'godlygeek/tabular'
 
 " All Plugins must be added before the following
 call vundle#end()
@@ -129,6 +130,8 @@ nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
 nnoremap <leader>c :nohl<CR>
 " Set working dir to current file's dir
 nnoremap <leader>d :lcd %:p:h<CR>
+" quick open current dir
+nnoremap <leader>. :e .<CR>
 
 " Doubleclick to toggle code fold
 " map <2-LeftMouse> za
@@ -150,6 +153,7 @@ au BufNewFile,Bufread *.less set ft=less
 au BufNewFile,Bufread *.jade set ft=jade
 au BufNewFile,Bufread *.coffee set ft=coffee
 au BufNewFile,Bufread *.ex set ft=elixir
+au BufNewFile,BufReadPost *.md set filetype=markdown
 
 " -- NERDtree --
 let NERDTreeIgnore=[ '\.beam$', '^\.git$' ]
