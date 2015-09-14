@@ -24,6 +24,9 @@ Plugin 'elixir-lang/vim-elixir'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'godlygeek/tabular'
+Plugin 'lambdatoast/elm.vim'
+" JS HINT
+Plugin 'wookiehangover/jshint.vim'
 
 " All Plugins must be added before the following
 call vundle#end()
@@ -38,10 +41,10 @@ colorscheme panacea " requires itsgreggreg/varnish
 set guifont=Menlo\ Regular:h17
 
 " -- REMAP MOVEMENT FOR DVORAK --
-noremap t j
-noremap n k
-noremap s l
-noremap m n
+" noremap t j
+" noremap n k
+" noremap s l
+" noremap m n
 " -- REMAP SCREEN MOVEMENT FOR DVORAK --
 nnoremap <C-S> <C-W>l
 nnoremap <C-T> <C-W>j
@@ -74,9 +77,10 @@ set smartcase      " Case insensitiv search
 set mouse=a        " Enable mouse
 set visualbell     " No beep
 set noerrorbells   " Don't beep
-set listchars=tab:▸\ ,eol:¬   " Nicer white space characters
+set listchars=tab:▸\ ,eol:¬,extends:⫸,precedes:⫷,nbsp:␣   " Nicer white space characters
 set history=1000     " Longer history
 set undolevels=1000  " More undo levels
+set noeol          " No new line at end of file
 if v:version >= 730
   set undofile       " Store undos between runs
   set undodir=~/.vim/.undo,~/tmp,/tmp
@@ -96,8 +100,8 @@ nnoremap r <C-R>
 nnoremap <C-R> <Nop>
 " Many less shift presses
 nnoremap ; :
-" Remap tn to <esc> in insert mode.
-inoremap tn <Esc>l
+" Remap jj to <esc> in insert mode.
+inoremap jj <Esc>l
 " " Remap hs to <esc>-save in insert mode
 " inoremap hs <Esc>:w<enter>l
 " Move lines up and down with - and _
@@ -133,6 +137,8 @@ nnoremap <leader>d :lcd %:p:h<CR>
 " quick open current dir
 nnoremap <leader>. :e .<CR>
 
+"toggle between tabs and spaces
+nnoremap <leader><tab> :set expandtab!<CR>
 " Doubleclick to toggle code fold
 " map <2-LeftMouse> za
 
@@ -154,6 +160,7 @@ au BufNewFile,Bufread *.jade set ft=jade
 au BufNewFile,Bufread *.coffee set ft=coffee
 au BufNewFile,Bufread *.ex set ft=elixir
 au BufNewFile,BufReadPost *.md set filetype=markdown
+au BufNewFile,BufReadPost *.purs set filetype=haskell
 
 " -- NERDtree --
 let NERDTreeIgnore=[ '\.beam$', '^\.git$' ]
