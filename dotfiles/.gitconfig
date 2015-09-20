@@ -31,6 +31,9 @@
   co = "checkout"
   bn = "checkout -b"
   bd = "branch -d"
+  # PUSHING
+  po = "push origin"
+  pom = "push origin master"
   # DIFFING
   theirs = "checkout --theirs"
   ours   = "checkout --ours"
@@ -39,7 +42,6 @@
   d3     = "checkout --conflict=diff3"
   # MISC
   rhh = "reset --hard HEAD"
-  pom = "push origin master"
   ltbc = "commit -m \"Let there be code\""
   stash = "stash -u"
 
