@@ -56,6 +56,22 @@ nnoremap N 5k
 map S $
 map H ^
 
+" -- Leader combos for common programming chars
+imap <leader>h (
+imap <leader>t )
+imap <leader>H [
+imap <leader>T ]
+imap <leader>n {
+imap <leader>s }
+imap <leader>n =
+imap <leader>N +
+imap <leader>s \
+imap <leader>S \
+imap <leader>a !
+imap <leader>o $
+imap <leader>e *
+imap <leader>u `
+
 " -- SETTINGS --
 set number         " Show Line Numbers
 set colorcolumn=81 " Show the 81st column

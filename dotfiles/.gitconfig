@@ -18,8 +18,8 @@
   # INFO
   s  = "status"
   sl = "shortlog"
-  l  = "log --oneline"
-  ll = "log --oneline --decorate --graph --all"
+  l = "log --oneline --decorate --graph --all --relative-date"
+  ll = "log --graph --pretty=format:'%C(yellow)%h%Creset -%C(magenta)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all"
   # COMITTING
   corb = "checkout --track -b" # checkout and track remote branch
   cm   = "commit -m"
