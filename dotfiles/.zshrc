@@ -97,3 +97,6 @@ hash -d clients=~/Etufe/Clients
 
 # Regular Aliases
 alias nv=nvim
+
+# Dotfiles
+export PATH=~/.dotfiles/pathfiles:$PATH
