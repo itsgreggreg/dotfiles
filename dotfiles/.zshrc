@@ -50,6 +50,7 @@ export ZSH=/Users/greggreg/.oh-my-zsh
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git)
+plugins=(vi-mode)
 
 # User configuration
 
@@ -84,8 +85,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 # My Custom Prompt
-local ret_status="%(?:%{$fg_bold[green]%}⤮ :%{$fg_bold[red]%}⤮ %s)"
-PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}%{$fg[cyan]%}$%{$reset_color%} '
+local ret_status="%(?:%{$fg_bold[green]%}⤜ :%{$fg_bold[red]%}⤜ %s)"
+PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}%{$fg_bold[green]%}➛%{$reset_color%}  '
 
 ZSH_THEME_GIT_PROMPT_PREFIX="@%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
@@ -94,9 +95,18 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%}"
 
 # Director ALiases
 hash -d clients=~/Etufe/Clients
+hash -d h=~/
 
 # Regular Aliases
 alias nv=nvim
 
 # Dotfiles
 export PATH=~/.dotfiles/pathfiles:$PATH
+
+# Put ZSH in vi mode
+bindkey -v
+bindkey -M viins 'jj' vi-cmd-mode
+
+# Key timeout faster
+export KEYTIMEOUT=40
+
