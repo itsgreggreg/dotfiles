@@ -96,9 +96,11 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%}"
 # Director ALiases
 hash -d clients=~/Etufe/Clients
 hash -d h=~/
+hash -d trash=~/trash
 
 # Regular Aliases
 alias nv=nvim
+alias beet='beet -c ~/.beets_config.yaml'
 
 # Dotfiles
 export PATH=~/.dotfiles/pathfiles:$PATH
@@ -110,3 +112,5 @@ bindkey -M viins 'jj' vi-cmd-mode
 # Key timeout faster
 export KEYTIMEOUT=40
 
+export PATH=~/Developer/android-sdk-macosx/tools:$PATH
+export PATH=~/Developer/android-sdk-macosx/platform-tools:$PATH

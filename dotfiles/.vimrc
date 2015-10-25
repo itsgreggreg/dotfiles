@@ -38,7 +38,8 @@ colorscheme panacea " requires itsgreggreg/varnish
 " Monokai, up, wombat, desert. vanzan_color, vilight, void
 
 " -- GVIM --
-set guifont=Menlo\ Regular:h17
+" set guifont=Menlo\ Regular:h17
+set guifont=DejaVu\ Sans\ Mono:h17
 
 " -- REMAP MOVEMENT FOR DVORAK --
 " noremap t j
