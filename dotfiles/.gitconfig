@@ -6,7 +6,7 @@
 [core]
   ; Don't trust file modes
   filemode = false
-  editor = /usr/bin/vim
+  editor = /usr/local/bin/nvim
 
 [user]
   name = greggreg
@@ -15,6 +15,7 @@
 [alias]
   sshow = "!f() { git stash show stash^{/$*} -p; }; f"
   sapply = "!f() { git stash apply stash^{/$*}; }; f"
+  sforce = "!git stash show -p | git apply && git stash drop"
   # INFO
   s  = "status"
   sl = "shortlog"
@@ -44,6 +45,8 @@
   rhh = "reset --hard HEAD"
   ltbc = "commit -m \"Let there be code\""
   stash = "stash -u"
+  i = "!git init && git add . && git status"
+  oops = "reset --soft HEAD~"
 
 [color]
   ui = auto

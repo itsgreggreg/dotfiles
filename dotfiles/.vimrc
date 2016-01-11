@@ -41,37 +41,28 @@ colorscheme panacea " requires itsgreggreg/varnish
 " set guifont=Menlo\ Regular:h17
 set guifont=DejaVu\ Sans\ Mono:h17
 
-" -- REMAP MOVEMENT FOR DVORAK --
-" noremap t j
-" noremap n k
-" noremap s l
-" noremap m n
-" -- REMAP SCREEN MOVEMENT FOR DVORAK --
-nnoremap <C-S> <C-W>l
-nnoremap <C-T> <C-W>j
-nnoremap <C-N> <C-W>k
-nnoremap <C-H> <C-W>h
-" -- SCREEN MOVEMENT OVER NORMAL MOVEMENT --
-nnoremap T 5j
-nnoremap N 5k
+" -- CURSOR MOVEMENT
+nnoremap <C-s> 5j
+nnoremap <C-h> 5k
 map S $
 map H ^
 
 " -- Leader combos for common programming chars
 imap <leader>h (
 imap <leader>t )
-imap <leader>H [
-imap <leader>T ]
+imap <leader>b [
+imap <leader>m ]
 imap <leader>n {
 imap <leader>s }
-imap <leader>n =
-imap <leader>N +
-imap <leader>s \
-imap <leader>S \
+imap <leader>H +
+imap <leader>T -
+imap <leader>N *
+imap <leader>S /
 imap <leader>a !
 imap <leader>o $
 imap <leader>e *
 imap <leader>u `
+imap <leader>x <backspace>
 
 " -- SETTINGS --
 set number         " Show Line Numbers
@@ -117,8 +108,12 @@ nnoremap r <C-R>
 nnoremap <C-R> <Nop>
 " Many less shift presses
 nnoremap ; :
+" Quick search and replace
+noremap // :%s//cg<Left><Left><Left>
+" Remove last character on line
+nnoremap <C-x> :s/.$/<enter>:nohl<enter>
 " Remap jj to <esc> in insert mode.
-inoremap jj <Esc>l
+inoremap jk <Esc>l
 " " Remap hs to <esc>-save in insert mode
 " inoremap hs <Esc>:w<enter>l
 " Move lines up and down with - and _
@@ -136,6 +131,8 @@ nnoremap zz :w<CR>
 " Easier shortcut for matching brackets
 nnoremap <tab> %
 vnoremap <tab> %
+" Replace char under cursor with <space>
+nnoremap <leader><space> r<space><Esc>
 
 "-- LEADER MAPPINGS --
 let mapleader = "'"

@@ -1,31 +1,45 @@
-# put bash into vi mode
-set -o vi
+#!/usr/bin/env bash
 
-# put source files in path
-export PATH=~/.dotfiles/pathfiles:$PATH
+# Load RVM, if you are using it
+[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
-# rbenv
-export PATH=~/.rbenv/shims:$PATH
-#To use Homebrew's directories rather than ~/.rbenv add to your profile:
-export RBENV_ROOT=/usr/local/var/rbenv
-#To enable shims and autocompletion add to your profile:
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+# Add rvm gems and nginx to the path
+export PATH=$PATH:~/.gem/ruby/1.8/bin:/opt/nginx/sbin
 
-# Beets with config in home
-alias beet='beet -c ~/.beets_config.yaml'
+# Path to the bash it configuration
+export BASH_IT=$HOME/.bash_it
 
-# open shortcut
-alias o='open'
-alias o.='open .'
-alias o..='open ..'
+# Lock and Load a custom theme file
+# location /.bash_it/themes/
+export BASH_IT_THEME='bobby'
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+# Your place for hosting Git repos. I use this for private repos.
+export GIT_HOSTING='git@git.domain.com'
 
-# Android dev
-export PATH=~/Developer/android-sdk-macosx/tools:$PATH
-export PATH=~/Developer/android-sdk-macosx/platform-tools:$PATH
+# Set my editor and git editor
+export EDITOR="/usr/bin/mate -w"
+export GIT_EDITOR='/usr/bin/mate -w'
 
-# Sencha
-export PATH=/Users/greggreg/Developer/Sencha/Cmd/4.0.4.84:$PATH
-export SENCHA_CMD_3_0_0="/Users/greggreg/Developer/Sencha/Cmd/4.0.4.84"
+# Set the path nginx
+export NGINX_PATH='/opt/nginx'
+
+# Don't check mail when opening terminal.
+unset MAILCHECK
+
+
+# Change this to your console based IRC client of choice.
+
+export IRC_CLIENT='irssi'
+
+# Set this to the command you use for todo.txt-cli
+export TODO="t"
+
+# Set this to false to turn off version control status checking within the prompt for all themes
+export SCM_CHECK=true
+
+# Set vcprompt executable path for scm advance info in prompt (demula theme)
+# https://github.com/xvzf/vcprompt
+#export VCPROMPT_EXECUTABLE=~/.vcprompt/bin/vcprompt
+
+# Load Bash It
+source $BASH_IT/bash_it.sh
