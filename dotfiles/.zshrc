@@ -103,6 +103,7 @@ hash -d trash=~/trash
 alias v=nvim
 alias beet='beet -c ~/.beets_config.yaml'
 alias mkdr=mkdir
+alias s='say -v Samantha'
 
 # Dotfiles
 export PATH=~/.dotfiles/pathfiles:$PATH

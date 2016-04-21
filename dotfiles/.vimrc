@@ -26,7 +26,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'godlygeek/tabular'
 Plugin 'lambdatoast/elm.vim'
 " JS HINT
-Plugin 'wookiehangover/jshint.vim'
 
 " All Plugins must be added before the following
 call vundle#end()
@@ -39,7 +38,7 @@ colorscheme panacea " requires itsgreggreg/varnish
 
 " -- GVIM --
 " set guifont=Menlo\ Regular:h17
-set guifont=DejaVu\ Sans\ Mono:h17
+set guifont=DejaVu\ Sans\ Mono:h20
 
 " -- CURSOR MOVEMENT
 nnoremap <C-s> 5j
@@ -47,21 +46,23 @@ nnoremap <C-h> 5k
 map S $
 map H ^
 
+let mapleader = ","
 " -- Leader combos for common programming chars
+imap <leader>d \|
 imap <leader>h (
 imap <leader>t )
 imap <leader>b [
 imap <leader>m ]
 imap <leader>n {
 imap <leader>s }
-imap <leader>H +
-imap <leader>T -
-imap <leader>N *
-imap <leader>S /
-imap <leader>a !
-imap <leader>o $
+imap <leader>a +
+imap <leader>o -
 imap <leader>e *
-imap <leader>u `
+imap <leader>u /
+imap <leader>i \
+imap <leader>; !
+imap <leader>q $
+imap <leader>k `
 imap <leader>x <backspace>
 
 " -- SETTINGS --
@@ -89,6 +90,7 @@ set listchars=tab:▸\ ,eol:¬,extends:⫸,precedes:⫷,nbsp:␣   " Nicer white
 set history=1000     " Longer history
 set undolevels=1000  " More undo levels
 set noeol          " No new line at end of file
+set scrolloff=5
 if v:version >= 730
   set undofile       " Store undos between runs
   set undodir=~/.vim/.undo,~/tmp,/tmp
@@ -135,7 +137,6 @@ vnoremap <tab> %
 nnoremap <leader><space> r<space><Esc>
 
 "-- LEADER MAPPINGS --
-let mapleader = "'"
 " Uppercase whole words
 nnoremap <leader>U viwUw
 " Lowercase whole words

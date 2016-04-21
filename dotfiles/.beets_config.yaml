@@ -29,6 +29,7 @@ plugins:
   web
   convert
   play
+  edit
 
 # convert:
 #   auto: yes
