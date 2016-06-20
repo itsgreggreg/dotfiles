@@ -47,6 +47,7 @@
   stash = "stash -u"
   i = "!git init && git add . && git status"
   oops = "reset --soft HEAD~"
+  pc = diff --cached --diff-algorithm=minimal -w
 
 [color]
   ui = auto
