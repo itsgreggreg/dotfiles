@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/greggreg/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -121,3 +121,6 @@ export PATH=~/Developer/android-sdk-macosx/platform-tools:$PATH
 # RBENV
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+# BREW before System
+export PATH="/usr/local/bin:$PATH"
