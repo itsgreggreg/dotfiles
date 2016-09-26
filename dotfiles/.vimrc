@@ -38,7 +38,7 @@ colorscheme panacea " requires itsgreggreg/varnish
 
 " -- GVIM --
 " set guifont=Menlo\ Regular:h17
-set guifont=DejaVu\ Sans\ Mono:h20
+set guifont=Ubuntu\ Mono:h20
 
 " -- CURSOR MOVEMENT
 nnoremap <C-s> 5j

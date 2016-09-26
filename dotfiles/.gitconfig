@@ -7,6 +7,7 @@
   ; Don't trust file modes
   filemode = false
   editor = /usr/local/bin/nvim
+	excludesfile = /Users/gregb/.gitignore_global
 
 [user]
   name = greggreg
@@ -16,13 +17,13 @@
   sshow = "!f() { git stash show stash^{/$*} -p; }; f"
   sapply = "!f() { git stash apply stash^{/$*}; }; f"
   sforce = "!git stash show -p | git apply && git stash drop"
+  swd = "stash save --keep-index -u"
   # INFO
   s  = "status"
   sl = "shortlog"
   l = "log --oneline --decorate --graph --all --relative-date"
   ll = "log --graph --pretty=format:'%C(yellow)%h%Creset -%C(magenta)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all"
   # COMITTING
-  corb = "checkout --track -b" # checkout and track remote branch
   cm   = "commit -m"
   cma  = "commit --amend"
   # ADDING
@@ -30,8 +31,15 @@
   ac = "add -u" # Only add changes, not untracked files
   # CHECKOUT / BRANCHING
   co = "checkout"
+  corb = "checkout --track -b" # checkout and track remote branch
   bn = "checkout -b"
   bd = "branch -d"
+  b  = "branch"
+  ba = "branch --all"
+  # Pushes current branch to be remote tracked
+  pbr = "!git rev-parse --abbrev-ref HEAD | while read out; do git push -u origin $out; done"
+  # pbr = "push -u"
+  drb = "push origin --delete"
   # PUSHING
   po = "push origin"
   pom = "push origin master"
@@ -49,8 +57,25 @@
   oops = "reset --soft HEAD~"
   pc = diff --cached --diff-algorithm=minimal -w
 
+  # Stupid
+  whataremylocalbranches = "branch"
+  whatareallthebranches = "branch --all"
+  canihavethecodefrom  = "checkout"
+  addtotheindex = "add"
+  saveforever = "commit"
+  deletetheremotebranch = "push origin --delete"
+  givethisecodetoeveryone = "push"
+  sup = "status"
+
 [color]
   ui = auto
 
 [merge]
   conflictstyle = diff3
+	tool = opendiff
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

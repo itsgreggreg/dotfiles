@@ -105,6 +105,10 @@ alias beet='beet -c ~/.beets_config.yaml'
 alias mkdr=mkdir
 alias s='say -v Samantha'
 
+# Stupid Aliases
+alias got=git
+alias g=git
+
 # Dotfiles
 export PATH=~/.dotfiles/pathfiles:$PATH
 
@@ -119,8 +123,14 @@ export PATH=~/Developer/android-sdk-macosx/tools:$PATH
 export PATH=~/Developer/android-sdk-macosx/platform-tools:$PATH
 
 # RBENV
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+#export PATH="$HOME/.rbenv/bin:$PATH"
+#eval "$(rbenv init -)"
 
 # BREW before System
 export PATH="/usr/local/bin:$PATH"
+
+# KIEX - Elixir Version Manager
+# https://github.com/taylor/kiex
+test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
+
+export PATH="/Users/gregb/scripts:$PATH"
