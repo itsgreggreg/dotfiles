@@ -8,6 +8,7 @@
   filemode = false
   editor = /usr/local/bin/nvim
 	excludesfile = /Users/gregb/.gitignore_global
+	excludesfile = /Users/jenkins/.gitignore_global
 
 [user]
   name = greggreg
