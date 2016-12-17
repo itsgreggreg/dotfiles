@@ -5,12 +5,14 @@ map global normal '#' :comment-line<ret>
 hook global WinCreate ^[^*]+$ %{
     addhl number_lines
     addhl show_matching
+    addhl show_whitespaces
     search-highlighting-enable
     ranger-open-on-edit-directory
 }
 
 # Softer Colors
 colorscheme lucius
+face Whitespace rgb:555555
 
 # Use ; for commands rather than :
 map global normal ';' :
