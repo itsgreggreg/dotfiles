@@ -55,7 +55,9 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>222 140 918 512 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>67 115 1308 673 0 0 1440 877 </string>
+	<string>17 29 1352 848 0 0 1440 877 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>176 70 890 652 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -650,6 +652,10 @@
 			<string>/Users/jenkins</string>
 		</dict>
 	</array>
+	<key>NoSyncConfirmBeta</key>
+	<true/>
+	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
+	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>AD1A3EBD-7E8F-447D-B7D1-C4C68C77BB17</string>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
@@ -660,6 +666,8 @@
 	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>491268662.322721</real>
+	<key>PMPrintingExpandedStateForPrint2</key>
+	<false/>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -695,6 +703,8 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/jenkins/.dotfiles/other</string>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>PromptOnQuit</key>
 	<false/>
 	<key>SUEnableAutomaticChecks</key>
@@ -706,12 +716,14 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-08-10T15:01:17Z</date>
+	<date>2016-12-07T23:49:52Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>ShowFullScreenTabBar</key>
+	<true/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>iTerm Version</key>
-	<string>3.0.5</string>
+	<string>3.0.12</string>
 </dict>
 </plist>

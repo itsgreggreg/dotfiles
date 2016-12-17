@@ -93,7 +93,7 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%} %{$fg[yellow]%}✍ %{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%}"
 
-# Director ALiases
+# Directory Aliases
 hash -d clients=~/Etufe/Clients
 hash -d etufe=~/Etufe
 hash -d h=~/
@@ -104,6 +104,7 @@ alias v=nvim
 alias beet='beet -c ~/.beets_config.yaml'
 alias mkdr=mkdir
 alias s='say -v Samantha'
+alias wifi='sudo spoof randomize Wi-Fi;networksetup -setairportpower en0 off;networksetup -setairportpower en0 on'
 
 # Stupid Aliases
 alias got=git
