@@ -69,3 +69,6 @@ def editorconfig-load -docstring "Set indentation options according to editorcon
     }
 }
 
+hook global WinCreate ^[^*]+$ %{
+    editorconfig-load
+}
