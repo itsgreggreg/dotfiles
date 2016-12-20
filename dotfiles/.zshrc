@@ -51,6 +51,7 @@ export ZSH=~/.oh-my-zsh
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git)
 plugins=(vi-mode)
+plugins=(fasd)
 
 # User configuration
 
@@ -64,9 +65,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
+#   export EDITOR='kak'
 # else
-#   export EDITOR='mvim'
+#   export EDITOR='kak'
 # fi
 
 # Compilation flags
@@ -103,7 +104,7 @@ hash -d trash=~/trash
 alias v=nvim
 alias beet='beet -c ~/.beets_config.yaml'
 alias mkdr=mkdir
-alias s='say -v Samantha'
+alias say='say -v Samantha'
 alias wifi='sudo spoof randomize Wi-Fi;networksetup -setairportpower en0 off;networksetup -setairportpower en0 on'
 
 # Stupid Aliases
@@ -135,3 +136,6 @@ export PATH="/usr/local/bin:$PATH"
 test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
 
 export PATH="/Users/gregb/scripts:$PATH"
+export EDITOR=kak
+
+function k () kak `fasd -f $1`

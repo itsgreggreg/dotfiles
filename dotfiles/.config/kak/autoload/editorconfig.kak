@@ -1,36 +1,3 @@
-# Use # to comment lines
-map global normal '#' :comment-line<ret>
-
-# Global window hooks
-hook global WinCreate ^[^*]+$ %{
-    addhl number_lines
-    addhl show_matching
-    addhl show_whitespaces
-    search-highlighting-enable
-    ranger-open-on-edit-directory
-}
-
-# Softer Colors
-colorscheme lucius
-face Whitespace rgb:555555
-
-# undo shows history number
-map global normal u <a-u>
-
-# redo shows history number
-map global normal U <a-U>
-
-# Use jk to exit normal mode
-hook global InsertChar k %{ try %{
-  exec -draft hH <a-k>jk<ret> d
-  exec <esc>
-}}
-
-# show Trailing whitespace
-hook -group TrailingWhitespaces global WinCreate .* %{
-    addhl regex '\h+$' 0:default,red
-}
-
 # Editor Config Loader
 def editorconfig-load -docstring "Set indentation options according to editorconfig file" %{
     %sh{

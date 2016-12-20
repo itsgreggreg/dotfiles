@@ -1,0 +1,81 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Marks:
+'H
+	/Users/gregb/
+	..
+1482021979
+'b
+	/Users/gregb/bin/
+	..
+1482021979
+'h
+	/Users/gregb/
+	..
+1482021979
+'z
+	/Users/gregb/.config/vifm
+	..
+1482021979
+
+# Bookmarks:
+
+# TUI:
+al
+q0
+v2
+ov
+m-1
+l2
+r2
+
+# Left window history (oldest to newest):
+d/Users/gregb/Enbala/symphony
+	config
+3
+d/Users/gregb/Enbala/symphony/config
+	..
+0
+d/Users/gregb/Enbala/symphony
+	apps
+2
+d/Users/gregb/Enbala/symphony/apps
+	symphony_web
+8
+d/Users/gregb/Enbala/symphony/apps/symphony_web
+	lib
+2
+d
+
+# Right window history (oldest to newest):
+D/Users/gregb/Enbala/symphony
+	..
+0
+D
+
+# Command line history (oldest to newest):
+:q
+
+# Search history (oldest to newest):
+/meter
+
+# Prompt history (oldest to newest):
+
+# Local filter history (oldest to newest):
+
+# Registers:
+
+# Directory stack (oldest to newest):
+
+# Trash content:
+
+# State:
+f
+i1
+[.1
+[F
+F
+I1
+].1
+]F
+s0
