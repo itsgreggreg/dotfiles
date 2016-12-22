@@ -1,27 +1,33 @@
+# Global window hooks
+hook global WinCreate ^[^*]+$ %{
+  # Show line numbers
+  addhl number_lines
+  # Show matching brackets
+  addhl show_matching
+  # Show whitespace characters
+  addhl show_whitespaces
+  # I forget
+  search-highlighting-enable
+}
+
 # Use # to comment lines
 map global normal '#' :comment-line<ret>
 
-# Global window hooks
-hook global WinCreate ^[^*]+$ %{
-  addhl number_lines
-  addhl show_matching
-  addhl show_whitespaces
-  search-highlighting-enable
-  ranger-open-on-edit-directory
-}
-
-# Scroll Offset
+# Scroll offset
 set-option global scrolloff 5,0
 
-# Softer Colors
+# Softer colors
 colorscheme lucius
 face Whitespace rgb:555555
 
-# undo shows history number
+# Undo shows history number
 map global normal u <a-u>
 
-# redo shows history number
+# Redo shows history number
 map global normal U <a-U>
+
+# Map ,l to change line preserving whitespace
+map global user l I<esc><a-l>c
 
 # Use jk to exit normal mode
 hook global InsertChar k %{ try %{
@@ -29,7 +35,7 @@ hook global InsertChar k %{ try %{
   exec <esc>
 }}
 
-# show Trailing whitespace
+# Show trailing whitespace
 hook -group TrailingWhitespaces global WinCreate .* %{
     addhl regex '\h+$' 0:default,red
 }
