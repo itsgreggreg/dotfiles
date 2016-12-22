@@ -6,8 +6,6 @@ hook global WinCreate ^[^*]+$ %{
   addhl show_matching
   # Show whitespace characters
   addhl show_whitespaces
-  # I forget
-  search-highlighting-enable
 }
 
 # Use # to comment lines

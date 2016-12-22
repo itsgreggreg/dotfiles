@@ -1,15 +1,8 @@
-
-##
-## gdt.kak by lenormf
-## Highlight TODO, FIXME and XXX comments
-## v1.0
-##
-
-# Create a subgroup called "gdt"
-addhl -group / group gdt
+# Create a subgroup called "todo"
+addhl -group / group todo
 
 # Make the subgroup highlight certain keywords
-addhl -group /gdt regex TODO|FIXME|XXX 0:default+rb
+addhl -group /todo regex TODO 0:default+rb
 
 # Assign the "gdt" highlighter to each language's comments highlighter
 %sh{
@@ -23,6 +16,7 @@ addhl -group /gdt regex TODO|FIXME|XXX 0:default+rb
         dlang
         erlang
         elixir
+        elm
         fish
         golang
         haml
@@ -45,6 +39,6 @@ addhl -group /gdt regex TODO|FIXME|XXX 0:default+rb
         yaml
     )
     for lang in "${LANGS[@]}"; do
-        echo "addhl -group /${lang}/comment ref gdt"
+        echo "try %{ addhl -group /${lang}/comment ref todo}"
     done
 }
