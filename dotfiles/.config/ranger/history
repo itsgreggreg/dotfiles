@@ -1,8 +1,20 @@
 kakl
 kak
-
 show hidden
-help
 find meter
 find me
 find mix.e
+reload
+r
+refresh
+move autoload
+mv autoload
+new unit_conversions.ex
+delete
+t unit_conversions.ex
+touch unit_conversions.ex
+open_with kak
+show_hidden
+help
+
+open

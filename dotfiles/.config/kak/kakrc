@@ -3,11 +3,11 @@ map global normal '#' :comment-line<ret>
 
 # Global window hooks
 hook global WinCreate ^[^*]+$ %{
-    addhl number_lines
-    addhl show_matching
-    addhl show_whitespaces
-    search-highlighting-enable
-    ranger-open-on-edit-directory
+  addhl number_lines
+  addhl show_matching
+  addhl show_whitespaces
+  search-highlighting-enable
+  ranger-open-on-edit-directory
 }
 
 # Scroll Offset
