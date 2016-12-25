@@ -6,6 +6,8 @@ hook global WinCreate ^[^*]+$ %{
   addhl show_matching
   # Show whitespace characters
   addhl show_whitespaces
+  # Use editorconfig
+  editorconfig-load
 }
 
 # Use # to comment lines
@@ -38,3 +40,16 @@ hook -group TrailingWhitespaces global WinCreate .* %{
     addhl regex '\h+$' 0:default,red
 }
 
+# Skip the *debug* buffer on bn and bp
+def my-buffer-next %{
+  buffer-next
+  %sh{ [ "${kak_bufname}" = '*debug*' ] && echo buffer-next }
+}
+
+def my-buffer-prev %{
+  buffer-previous
+  %sh{ [ "${kak_bufname}" = '*debug*' ] && echo buffer-previous }
+}
+
+alias global bn my-buffer-next
+alias global bp my-buffer-prev
