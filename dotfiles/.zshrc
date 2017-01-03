@@ -112,6 +112,7 @@ alias got=git
 alias g=git
 
 # Dotfiles
+export PATH=/usr/local/bin/rsync:$PATH
 export PATH=~/.dotfiles/pathfiles:$PATH
 
 # Put ZSH in vi mode
