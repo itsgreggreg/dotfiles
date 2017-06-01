@@ -68,3 +68,8 @@ hook global WinSetOption filetype=(?!elm).* %{
     rmhooks window elm-hooks
 }
 
+# Comment hook
+hook global BufSetOption filetype=elm %{
+    set buffer comment_line_chars '-- '
+    set buffer comment_selection_chars '{- : -}'
+}

@@ -94,22 +94,12 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%} %{$fg[yellow]%}✍ %{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%}"
 
-# Directory Aliases
-hash -d clients=~/Etufe/Clients
-hash -d etufe=~/Etufe
-hash -d h=~/
-hash -d trash=~/trash
-
 # Regular Aliases
 alias v=nvim
 alias beet='beet -c ~/.beets_config.yaml'
 alias mkdr=mkdir
 alias say='say -v Samantha'
 alias wifi='sudo spoof randomize Wi-Fi;networksetup -setairportpower en0 off;networksetup -setairportpower en0 on'
-
-# Stupid Aliases
-alias got=git
-alias g=git
 
 # Dotfiles
 export PATH=/usr/local/bin/rsync:$PATH
@@ -125,18 +115,28 @@ export KEYTIMEOUT=40
 export PATH=~/Developer/android-sdk-macosx/tools:$PATH
 export PATH=~/Developer/android-sdk-macosx/platform-tools:$PATH
 
-# RBENV
-#export PATH="$HOME/.rbenv/bin:$PATH"
-#eval "$(rbenv init -)"
-
 # BREW before System
 export PATH="/usr/local/bin:$PATH"
-
-# KIEX - Elixir Version Manager
-# https://github.com/taylor/kiex
-test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
 
 export PATH="/Users/gregb/scripts:$PATH"
 export EDITOR=kak
 
+export PATH=~/.asdf/installs/python:$PATH
+
 function k () kak `fasd -f $1`
+
+. $HOME/.asdf/asdf.sh
+
+. $HOME/.asdf/completions/asdf.bash
+
+# Yarn install global packages
+export PATH=/usr/local/Cellar/node/7.5.0/bin:$PATH
+
+# fzf default command
+export FZF_DEFAULT_COMMAND="find . -path '*/\.*' -prune -o -type f -print -o -type l -print 2> /dev/null | sed s/^..//"
+# Open files in kak from fzf
+fk() {
+local files
+  IFS=$'\n' files=($(fzf --query="$1" --multi --select-1 --exit-0))
+  [[ -n "$files" ]] && kak "${files[@]}"
+}

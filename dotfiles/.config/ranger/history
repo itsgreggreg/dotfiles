@@ -10,11 +10,11 @@ refresh
 move autoload
 mv autoload
 new unit_conversions.ex
-delete
 t unit_conversions.ex
 touch unit_conversions.ex
-open_with kak
 show_hidden
 help
 
 open
+delete
+open_with kak
