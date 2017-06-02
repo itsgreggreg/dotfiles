@@ -1,9 +1,9 @@
 directory: "/Volumes/MUSIC/Music Library/"
-library: "/Volumes/Music/Beets/musiclibrary.blb"
+library: "/Volumes/MUSIC/Beets/musiclibrary.blb"
 import:
   move: yes
   timid: yes
-  log: "/Volumes/Music/Beets/log.txt"
+  log: "/Volumes/MUSIC/Beets/log.txt"
 paths:
   default: $albumartist/$year - $album/$track $artist - $title
   singleton: $artist/No Album/$artist - $title
@@ -15,7 +15,7 @@ clutter: "no"
 replace:
   '\.$': ''
   '^\.': ''
-  ':': '.'
+  ':'  : '.'
 
 plugins:
   fromfilename

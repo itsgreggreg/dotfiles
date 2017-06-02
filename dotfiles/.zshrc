@@ -123,11 +123,6 @@ export EDITOR=kak
 
 export PATH=~/.asdf/installs/python:$PATH
 
-function k () kak `fasd -f $1`
-
-. $HOME/.asdf/asdf.sh
-
-. $HOME/.asdf/completions/asdf.bash
 
 # Yarn install global packages
 export PATH=/usr/local/Cellar/node/7.5.0/bin:$PATH
@@ -140,3 +135,11 @@ local files
   IFS=$'\n' files=($(fzf --query="$1" --multi --select-1 --exit-0))
   [[ -n "$files" ]] && kak "${files[@]}"
 }
+
+# AWS cli
+export PATH=~/Library/Python/2.7/bin:$PATH
+
+
+# ASDF https://github.com/asdf-vm/asdf
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
