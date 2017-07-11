@@ -130,7 +130,7 @@ export PATH=/usr/local/Cellar/node/7.5.0/bin:$PATH
 # fzf default command
 export FZF_DEFAULT_COMMAND="find . -path '*/\.*' -prune -o -type f -print -o -type l -print 2> /dev/null | sed s/^..//"
 # Open files in kak from fzf
-fk() {
+ok() {
 local files
   IFS=$'\n' files=($(fzf --query="$1" --multi --select-1 --exit-0))
   [[ -n "$files" ]] && kak "${files[@]}"
@@ -143,3 +143,4 @@ export PATH=~/Library/Python/2.7/bin:$PATH
 # ASDF https://github.com/asdf-vm/asdf
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
+

@@ -24,6 +24,8 @@ set-option global scrolloff 5,0
 # Colors
 colorscheme lucius
 face Whitespace rgb:555555
+# Turn off autocomplete
+set global completers ""
 
   #
   # Key Bindings
@@ -64,29 +66,14 @@ hook global InsertChar k %{ try %{
 hook -group TrailingWhitespaces global WinCreate .* %{
     addhl regex '\h+$' 0:default,red
 }
-# Skip the *debug* buffer on bn and bp
-def my-buffer-next %{
-  buffer-next
-  %sh{ [ "${kak_bufname}" = '*debug*' ] && echo buffer-next }
-}
-def my-buffer-prev %{
-  buffer-previous
-  %sh{ [ "${kak_bufname}" = '*debug*' ] && echo buffer-previous }
-}
 
-  #
-  # Aliases
-  #
-
-alias global bn my-buffer-next
-alias global bp my-buffer-prev
 
   #
   # FZF integration
   #
 
 def -docstring 'invoke fzf to open a file' \
-  fk %{ %sh{
+  ok %{ %sh{
     if [ -z "$TMUX" ]; then
       echo echo only works inside tmux
     else
@@ -99,7 +86,7 @@ def -docstring 'invoke fzf to open a file' \
 }}
 
 def -docstring 'invoke fzf to select a buffer' \
-  fb %{ %sh{
+  ob %{ %sh{
     if [ -z "$TMUX" ]; then
       echo echo only works inside tmux
     else
