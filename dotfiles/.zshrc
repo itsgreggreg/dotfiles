@@ -112,17 +112,12 @@ bindkey -M viins 'jk' vi-cmd-mode
 # Key timeout faster
 export KEYTIMEOUT=40
 
+# Android Dev
 export PATH=~/Developer/android-sdk-macosx/tools:$PATH
 export PATH=~/Developer/android-sdk-macosx/platform-tools:$PATH
 
 # BREW before System
 export PATH="/usr/local/bin:$PATH"
-
-export PATH="/Users/gregb/scripts:$PATH"
-export EDITOR=kak
-
-export PATH=~/.asdf/installs/python:$PATH
-
 
 # Yarn install global packages
 export PATH=/usr/local/Cellar/node/7.5.0/bin:$PATH
@@ -139,8 +134,11 @@ local files
 # AWS cli
 export PATH=~/Library/Python/2.7/bin:$PATH
 
-
 # ASDF https://github.com/asdf-vm/asdf
+export PATH=~/.asdf/installs:$PATH
+export PATH=~/.asdf/installs/python:$PATH
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 
+# ENV
+export EDITOR=kak
