@@ -17,8 +17,6 @@ hook global WinCreate ^[^*]+$ %{
   # Basic Settings
   #
 
-# Use # to comment lines
-map global normal '#' :comment-line<ret>
 # Scroll offset
 set-option global scrolloff 5,0
 # Colors
@@ -28,16 +26,22 @@ face Whitespace rgb:555555
 set global completers ""
 
   #
-  # Key Bindings
+  # Normal Mode Commands
   #
 
-# Undo shows history number
-#map global normal u <a-u>
-# Redo shows history number
-#map global normal U <a-U>
+# Use # to comment lines
+map global normal '#' :comment-line<ret>
+# <c-d> to select matches
+map global normal <c-d> *
+# <c-w> to select matches with word boundary
+map global normal <c-w> <a-*>
+# <c-q> to delete buffer
+map global normal <c-q> ':delete-buffer<ret>'
+# use <c-j> to join current line with next
+map global normal '\'' <a-j>
 
   #
-  # User key bindings
+  # User key (,) bindings
   #
 
 # ,l changes line preserving whitespace
@@ -46,10 +50,6 @@ map global user l I<esc><a-l>c
 map global user y '<a-|>pbcopy<ret>'
 # ,p to paste from clipboard without auto-indent
 map global user p '<a-!>pbpaste<ret>'
-
-  #
-  # Aliases
-  #
 
   #
   # Hooks
@@ -61,6 +61,7 @@ hook global InsertChar k %{ try %{
   exec <esc>
 }}
 
+# Show training whitespace
 hook -group TrailingWhitespaces global WinCreate .* %{
     addhl regex '\h+$' 0:default,red
 }
@@ -68,11 +69,16 @@ hook -group TrailingWhitespaces global WinCreate .* %{
   #
   # Commands
   #
+
+# Git shortcuts
 def blame %{ git blame }
 def blame! %{ git hide-blame}
 
-# Show trailing whitespace
-
+# Put filepath in clipboard
+def -docstring 'copy current filepath to clipboard' \
+  clip-path %{
+    %sh{ echo $kak_buffile | pbcopy }
+}
 
   #
   # FZF integration
@@ -102,4 +108,3 @@ def -docstring 'invoke fzf to select a buffer' \
       fi
     fi
 }}
-

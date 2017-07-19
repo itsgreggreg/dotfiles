@@ -3,6 +3,6 @@
 #}
 
 hook global BufCreate .*[.](elm) %{
-  set buffer formatcmd "elm-format --stdin 2>&1"
+  set buffer formatcmd "elm-format --stdin"
 }
 hook global BufWritePre .+\.elm %{ format }
