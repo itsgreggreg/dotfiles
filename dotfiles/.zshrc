@@ -142,3 +142,14 @@ export PATH=~/.asdf/installs/python:$PATH
 
 # ENV
 export EDITOR=kak
+
+# Kill a named kak session
+kak-kill() {
+  if [ -z "$1" ]
+  then
+    echo "You must specify a session name"
+  else
+    echo kill | kak -p $1
+  fi
+}
+
