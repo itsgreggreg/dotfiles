@@ -62,7 +62,7 @@ map global user f ':of<ret>' -docstring 'Open File through fzf'
 # ,b to open buffer with fzf
 map global user b ':ob<ret>' -docstring 'Open Buffer through fzf'
 # ,c to close current buffer
-map global user c ':delete_buffer<ret>' -docstring 'Close current buffer.'
+map global user c ':delete-buffer<ret>' -docstring 'Close current buffer.'
 # ,s to write current buffer
 map global user s ':write<ret>' -docstring 'Save current buffer'
 
