@@ -6,30 +6,34 @@
 [core]
   ; Don't trust file modes
   filemode = false
-  editor = /usr/local/bin/nvim
+  editor = /usr/local/bin/kak
 	excludesfile = /Users/gregb/.gitignore_global
 	excludesfile = /Users/jenkins/.gitignore_global
 
 [user]
   name = greggreg
-  email = greggreg@itsgreggreg.com
+  email = greg@greggreg.org
 
 [alias]
   sshow = "!f() { git stash show stash^{/$*} -p; }; f"
   sapply = "!f() { git stash apply stash^{/$*}; }; f"
   sforce = "!git stash show -p | git apply && git stash drop"
   swd = "stash save --keep-index -u"
+
   # INFO
   s  = "status"
   sl = "shortlog"
   l = "log --oneline --decorate --graph --all --relative-date"
   ll = "log --graph --pretty=format:'%C(yellow)%h%Creset -%C(magenta)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all"
+
   # COMITTING
   cm   = "commit -m"
   cma  = "commit --amend"
+
   # ADDING
   aa = "add ."
   ac = "add -u" # Only add changes, not untracked files
+
   # CHECKOUT / BRANCHING
   co = "checkout"
   nb = "checkout -b" # new branch
@@ -41,17 +45,19 @@
   pbr = "!git rev-parse --abbrev-ref HEAD | while read out; do git push -u origin $out; done"
   # pbr = "push -u"
   drb = "push origin --delete"
+
   # PUSHING
   po = "push origin"
   pom = "push origin master"
+
   # DIFFING
   theirs = "checkout --theirs"
   ours   = "checkout --ours"
   d      = "diff"
   dc     = "diff --cached"
   d3     = "checkout --conflict=diff3"
+
   # MISC
-  rom = "rebase origin/master"
   rhh = "reset --hard HEAD"
   ltbc = "commit -m \"Let there be code\""
   stash = "stash -u"
@@ -59,15 +65,6 @@
   oops = "reset --soft HEAD~"
   pc = diff --cached --diff-algorithm=minimal -w
 
-  # Stupid
-  whataremylocalbranches = "branch"
-  whatareallthebranches = "branch --all"
-  canihavethecodefrom  = "checkout"
-  addtotheindex = "add"
-  saveforever = "commit"
-  deletetheremotebranch = "push origin --delete"
-  givethisecodetoeveryone = "push"
-  sup = "status"
 
 [color]
   ui = auto
