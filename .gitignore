@@ -3,3 +3,6 @@ dotfiles/.config/ranger/bookmarks
 dotfiles/.config/ranger/history
 dotfiles/.config/configstore/update-notifier-npm.json
 *.ini
+dotfiles/.config/qBittorrent/qBittorrent-data.ini
+dotfiles/.config/qBittorrent/qBittorrent.ini
+tmux-client*
