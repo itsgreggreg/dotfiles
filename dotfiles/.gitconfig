@@ -6,7 +6,7 @@
 [core]
   ; Don't trust file modes
   filemode = false
-  editor = /usr/local/bin/nvim
+	editor = kak
 	excludesfile = /Users/gregb/.gitignore_global
 	excludesfile = /Users/jenkins/.gitignore_global
 
@@ -59,16 +59,6 @@
   oops = "reset --soft HEAD~"
   pc = diff --cached --diff-algorithm=minimal -w
 
-  # Stupid
-  whataremylocalbranches = "branch"
-  whatareallthebranches = "branch --all"
-  canihavethecodefrom  = "checkout"
-  addtotheindex = "add"
-  saveforever = "commit"
-  deletetheremotebranch = "push origin --delete"
-  givethisecodetoeveryone = "push"
-  sup = "status"
-
 [color]
   ui = auto
 
@@ -77,7 +67,7 @@
 	tool = opendiff
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
