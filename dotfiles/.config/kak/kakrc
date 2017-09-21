@@ -45,7 +45,10 @@ map global normal <c-d> *
 map global normal <c-w> <a-*>
 # use ' to join current line with next
 map global normal '\'' <a-j>
-
+# Move line down
+map global normal '(' :move-lines-down<ret>
+# Move line up
+map global normal ')' :move-lines-up<ret>
 
   #
   # User key (,) bindings
@@ -98,6 +101,15 @@ def blame! %{ git hide-blame}
 def -docstring 'copy current filepath to clipboard' \
   clip-path %{
     %sh{ echo $kak_buffile | pbcopy }
+}
+
+# Move Lines Up and Down
+def move-lines-up -params 0..1 -docstring 'move-line-above [count]: select full lines and move line above' %{
+  exec "<a-x>yd%arg{1}k<a-P>"
+}
+
+def move-lines-down -params 0..1 -docstring 'move-line-below [count]: select full lines and move line below' %{
+  exec "<a-x>yd%arg{1}j<a-P>"
 }
 
 
