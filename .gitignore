@@ -6,3 +6,5 @@ dotfiles/.config/configstore/update-notifier-npm.json
 dotfiles/.config/qBittorrent/qBittorrent-data.ini
 dotfiles/.config/qBittorrent/qBittorrent.ini
 tmux-client*
+dotfiles/.config/yarn
+dotfiles/.config/qBittorrent*/*

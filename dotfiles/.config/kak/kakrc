@@ -72,6 +72,11 @@ map global user b ':ob<ret>' -docstring 'Open Buffer through fzf'
 map global user c ':delete-buffer<ret>' -docstring 'Close current buffer.'
 # ,s to write current buffer
 map global user s ':write<ret>' -docstring 'Save current buffer'
+# ,< to pipe selection to sort
+map global user < '|sort<ret>' -docstring 'Sort selected lines'
+# ,> to pipe selection to sort in reverse order
+map global user > '|sort -r<ret>' -docstring 'Reverse sort selected lines'
+
 
   #
   # Hooks

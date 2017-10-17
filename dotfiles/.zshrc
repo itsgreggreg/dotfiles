@@ -120,7 +120,7 @@ export PATH=~/Developer/android-sdk-macosx/platform-tools:$PATH
 export PATH="/usr/local/bin:$PATH"
 
 # Yarn install global packages
-export PATH=/usr/local/Cellar/node/7.5.0/bin:$PATH
+export PATH=~/.config/yarn/global/node_modules/.bin:$PATH
 
 # fzf default command
 export FZF_DEFAULT_COMMAND="find . -path '*/\.*' -prune -o -type f -print -o -type l -print 2> /dev/null | sed s/^..//"
