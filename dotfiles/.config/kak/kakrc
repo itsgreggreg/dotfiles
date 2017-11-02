@@ -82,9 +82,9 @@ map global user > '|sort -r<ret>' -docstring 'Reverse sort selected lines'
   # Hooks
   #
 
-# Use jk to exit normal mode
+# Use jk or Jk to exit normal mode
 hook global InsertChar k %{ try %{
-  exec -draft hH <a-k>jk<ret> d
+  exec -draft hH <a-k>(j|J)k<ret> d
   exec <esc>
 }}
 
