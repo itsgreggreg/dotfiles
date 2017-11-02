@@ -123,7 +123,7 @@ export PATH="/usr/local/bin:$PATH"
 export PATH=~/.config/yarn/global/node_modules/.bin:$PATH
 
 # fzf default command
-export FZF_DEFAULT_COMMAND="find . -path '*/\.*' -prune -o -type f -print -o -type l -print 2> /dev/null | sed s/^..//"
+export FZF_DEFAULT_COMMAND="fd --type f"
 # Open files in kak from fzf
 of() {
 local files
@@ -153,3 +153,5 @@ kak-kill() {
   fi
 }
 
+# Rust Path
+export PATH="$HOME/.cargo/bin:$PATH"

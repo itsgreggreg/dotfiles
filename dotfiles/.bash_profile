@@ -43,3 +43,5 @@ export SCM_CHECK=true
 
 # Load Bash It
 source $BASH_IT/bash_it.sh
+
+export PATH="$HOME/.cargo/bin:$PATH"

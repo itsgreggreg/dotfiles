@@ -126,7 +126,7 @@ def -docstring 'invoke fzf to open a file' \
     if [ -z "$TMUX" ]; then
       echo echo only works inside tmux
     else
-      FILE=$( find . -path '*/\.*' -prune -o -type f -print -o -type l -print 2> /dev/null | sed s/^..// | fzf-tmux -d 15)
+      FILE=$( fd --type f | fzf-tmux --preview 'cat {}' -d 30)
       # FILE=$(ls -1 | fzf-tmux -d 15)
       if [ -n "$FILE" ]; then
         printf 'eval -client %%{%s} edit %%{%s}\n' "${kak_client}" "${FILE}" | kak -p "${kak_session}"
@@ -139,7 +139,7 @@ def -docstring 'invoke fzf to select a buffer' \
     if [ -z "$TMUX" ]; then
       echo echo only works inside tmux
     else
-      BUFFER=`echo ${kak_buflist} | tr : '\n' | fzf-tmux -d 15`
+      BUFFER=`echo ${kak_buflist} | tr : '\n' | fzf-tmux -d 30`
       if [ -n "$BUFFER" ]; then
         echo "eval -client '$kak_client' 'buffer ${BUFFER}'" | kak -p ${kak_session}
       fi
