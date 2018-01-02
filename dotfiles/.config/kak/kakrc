@@ -43,8 +43,6 @@ map global normal '#' :comment-line<ret>
 map global normal <c-d> *
 # <c-w> to select matches with word boundary
 map global normal <c-w> <a-*>
-# use ' to join current line with next
-map global normal '\'' <a-j>
 # Move line down
 map global normal '(' :move-lines-down<ret>
 # Move line up
@@ -57,7 +55,6 @@ map global normal d \"_d
   #
   # User key (,) bindings
   #
-
 # ,l changes line preserving whitespace
 map global user l I<esc><a-l>c -docstring 'Change whole line preserving whitespace'
 # ,y to yank to clipboard
