@@ -1,22 +1,26 @@
   #
+  # FIX EDITOR CONFIG LOADING
+  #
+hook global InsertChar \t %{
+  exec -draft -itersel h@
+}
+
+
+  #
   # Global window hooks
   #
 
-hook global WinCreate ^[^*]+$ %{
-  # Show line numbers
-  addhl number_lines
-  # Show matching brackets
-  addhl show_matching
-  # Show whitespace characters
-  addhl show_whitespaces
-  # Use editorconfig
-  editorconfig-load
-}
-
+hook global BufCreate .* %{editorconfig-load}
   #
   # Basic Settings
   #
 
+# Show line numbers
+addhl global/ number_lines
+# Show matching brackets
+addhl global/ show_matching
+# Show whitespace characters
+addhl global/ show_whitespaces
 # Scroll offset
 set-option global scrolloff 5,0
 # Colors
